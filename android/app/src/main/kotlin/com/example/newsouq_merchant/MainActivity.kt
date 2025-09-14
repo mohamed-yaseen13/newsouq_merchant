@@ -1,4 +1,4 @@
-package com.example.newsouq_merchant
+package engmo.newsouq_merchant
 
 import io.flutter.embedding.android.FlutterActivity
 
