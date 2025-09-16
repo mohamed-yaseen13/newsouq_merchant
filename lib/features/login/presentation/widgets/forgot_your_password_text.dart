@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:newsouq_merchant/core/helpers/extension.dart';
-import 'package:newsouq_merchant/core/routing/app_routes.dart';
 import 'package:newsouq_merchant/core/styles/app_text_styles.dart';
 
-class AlreadyHaveAccountText extends StatelessWidget {
-  const AlreadyHaveAccountText({super.key});
+class ForgotYourPasswordText extends StatelessWidget {
+  const ForgotYourPasswordText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,15 +10,15 @@ class AlreadyHaveAccountText extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          'Already have an account? ',
+          "Forgot your password? ",
           style: AppTextStyles.gray4Color16FontSizeRegular,
         ),
         InkWell(
           onTap: () {
-            context.pushNamed(AppRoutes.loginScreen);
+            //context.pushNamed(AppRoutes.forgotPasswordScreen);
           },
           child: Text(
-            'Log In',
+            'Reset Your Password',
             style: AppTextStyles.blackColor16FontSizeMediumUnderline,
           ),
         ),

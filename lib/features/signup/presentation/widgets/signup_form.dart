@@ -40,7 +40,6 @@ class _SignupFormState extends State<SignupForm> {
             child: AppButton(
               onPressed: () {
                 if (_formKey.currentState!.validate()) {
-                  debugPrint('Good');
                   context.read<SignupCubit>().signup(
                     _emailController.text,
                     _passwordController.text,

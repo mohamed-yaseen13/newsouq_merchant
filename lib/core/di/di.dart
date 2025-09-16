@@ -1,6 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get_it/get_it.dart';
+import 'package:newsouq_merchant/features/login/data/apis/login_api_service.dart';
+import 'package:newsouq_merchant/features/login/data/repos/login_repo_imp.dart';
+import 'package:newsouq_merchant/features/login/presentation/cubit/login_cubit.dart';
 import 'package:newsouq_merchant/features/signup/data/apis/signup_api_service.dart';
 import 'package:newsouq_merchant/features/signup/data/repos/signup_repo_imp.dart';
 import 'package:newsouq_merchant/features/signup/presentation/cubit/signup_cubit.dart';
@@ -28,5 +31,16 @@ Future<void> setupGetIt() async {
   );
   getIt.registerFactory<SignupCubit>(
     () => SignupCubit(signupRepoImp: getIt<SignupRepoImp>()),
+  );
+
+  // Login
+  getIt.registerLazySingleton<LoginApiService>(
+    () => LoginApiService(auth: getIt<FirebaseAuth>()),
+  );
+  getIt.registerLazySingleton<LoginRepoImp>(
+    () => LoginRepoImp(loginApiService: getIt<LoginApiService>()),
+  );
+  getIt.registerFactory<LoginCubit>(
+    () => LoginCubit(loginRepoImp: getIt<LoginRepoImp>()),
   );
 }
