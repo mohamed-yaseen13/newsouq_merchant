@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:newsouq_merchant/core/helpers/extension.dart';
 import 'package:newsouq_merchant/core/styles/app_colors.dart';
@@ -43,11 +42,11 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
           });
         },
         icon: Padding(
-          padding: EdgeInsetsGeometry.all(4.sp),
+          padding: EdgeInsetsGeometry.all(4),
           child: SvgPicture.asset(
             isObscureText ? 'assets/icons/eye-off.svg' : 'assets/icons/Eye.svg',
-            width: 24.w,
-            height: 24.h,
+            width: 24,
+            height: 24,
           ),
         ),
       ),

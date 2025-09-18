@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsouq_merchant/core/styles/app_colors.dart';
 
 class AppButton extends StatelessWidget {
@@ -20,11 +19,9 @@ class AppButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.black,
         foregroundColor: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: 40.w, vertical: 16.h),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(25.r),
-        ),
-        minimumSize: Size(350.w, 60.h),
+        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
+        minimumSize: Size(350, 60),
       ),
       onPressed: onPressed,
       child: Text(desc, style: descStyle),

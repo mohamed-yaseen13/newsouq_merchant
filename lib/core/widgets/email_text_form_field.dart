@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:newsouq_merchant/core/styles/app_colors.dart';
 import 'package:newsouq_merchant/core/widgets/app_text_form_field.dart';
@@ -45,13 +44,13 @@ class _EmailTextFormFieldState extends State<EmailTextFormField> {
       suffixIcon: isValid == null
           ? null
           : Padding(
-              padding: EdgeInsetsGeometry.all(12.sp),
+              padding: EdgeInsetsGeometry.all(12),
               child: SvgPicture.asset(
                 isValid!
                     ? 'assets/icons/Check.svg'
                     : 'assets/icons/WarningCircle.svg',
-                width: 24.w,
-                height: 24.h,
+                width: 24,
+                height: 24,
               ),
             ),
       borderColor: isValid == null

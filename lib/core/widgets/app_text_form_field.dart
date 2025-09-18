@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsouq_merchant/core/helpers/spacing.dart';
 import 'package:newsouq_merchant/core/styles/app_colors.dart';
 import 'package:newsouq_merchant/core/styles/app_text_styles.dart';
@@ -33,7 +32,7 @@ class AppTextFormField extends StatelessWidget {
     final effectiveBorderColor = borderColor ?? AppColors.gray1;
 
     return SizedBox(
-      width: width ?? 500.w,
+      width: width ?? 500,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -46,24 +45,24 @@ class AppTextFormField extends StatelessWidget {
             decoration: InputDecoration(
               isDense: true,
               contentPadding: EdgeInsets.symmetric(
-                horizontal: 12.w,
-                vertical: 12.h,
+                horizontal: 12,
+                vertical: 12,
               ),
               enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: effectiveBorderColor, width: 2.w),
-                borderRadius: BorderRadius.circular(12.r),
+                borderSide: BorderSide(color: effectiveBorderColor, width: 2),
+                borderRadius: BorderRadius.circular(12),
               ),
               focusedBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: effectiveBorderColor, width: 2.w),
-                borderRadius: BorderRadius.circular(12.r),
+                borderSide: BorderSide(color: effectiveBorderColor, width: 2),
+                borderRadius: BorderRadius.circular(12),
               ),
               errorBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.red, width: 2.w),
-                borderRadius: BorderRadius.circular(12.r),
+                borderSide: BorderSide(color: AppColors.red, width: 2),
+                borderRadius: BorderRadius.circular(12),
               ),
               focusedErrorBorder: OutlineInputBorder(
-                borderSide: BorderSide(color: AppColors.red, width: 2.w),
-                borderRadius: BorderRadius.circular(12.r),
+                borderSide: BorderSide(color: AppColors.red, width: 2),
+                borderRadius: BorderRadius.circular(12),
               ),
               suffixIcon: suffixIcon,
               hintText: placeholder,

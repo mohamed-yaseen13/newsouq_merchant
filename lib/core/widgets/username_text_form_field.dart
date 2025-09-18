@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:newsouq_merchant/core/helpers/extension.dart';
 import 'package:newsouq_merchant/core/styles/app_colors.dart';
@@ -38,13 +37,13 @@ class _UsernameTextFormFieldState extends State<UsernameTextFormField> {
       suffixIcon: isValid == null
           ? null
           : Padding(
-              padding: EdgeInsetsGeometry.all(12.sp),
+              padding: EdgeInsetsGeometry.all(12),
               child: SvgPicture.asset(
                 isValid!
                     ? 'assets/icons/Check.svg'
                     : 'assets/icons/WarningCircle.svg',
-                width: 24.w,
-                height: 24.h,
+                width: 24,
+                height: 24,
               ),
             ),
       borderColor: isValid == null

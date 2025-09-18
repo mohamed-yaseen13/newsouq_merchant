@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newsouq_merchant/core/helpers/extension.dart';
 
 void loadingState({required BuildContext context}) {
@@ -9,10 +8,10 @@ void loadingState({required BuildContext context}) {
     builder: (context) {
       return Center(
         child: Container(
-          padding: EdgeInsets.all(24.sp),
+          padding: EdgeInsets.all(24),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.circular(12.r),
+            borderRadius: BorderRadius.circular(12),
           ),
           child: const CircularProgressIndicator(),
         ),
