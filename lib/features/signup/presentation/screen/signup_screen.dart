@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newsouq_merchant/core/helpers/extension.dart';
-import 'package:newsouq_merchant/core/helpers/spacing.dart';
 import 'package:newsouq_merchant/core/routing/app_routes.dart';
 import 'package:newsouq_merchant/core/states/states.dart';
-import 'package:newsouq_merchant/core/styles/app_text_styles.dart';
 import 'package:newsouq_merchant/features/signup/presentation/cubit/signup_cubit.dart';
 import 'package:newsouq_merchant/features/signup/presentation/cubit/signup_state.dart';
-import 'package:newsouq_merchant/features/signup/presentation/widgets/already_have_account_text.dart';
-import 'package:newsouq_merchant/features/signup/presentation/widgets/signup_form.dart';
+import 'package:newsouq_merchant/features/signup/presentation/widgets/signup_builder.dart';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -39,25 +36,7 @@ class SignupScreen extends StatelessWidget {
           }
         },
         builder: (context, state) {
-          return Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Create an account',
-                style: AppTextStyles.blackColor32FontSizeSemibold,
-              ),
-              verticalSpace(4),
-              Text(
-                "Let's create your account.",
-                style: AppTextStyles.gray5Color16FontSizeRegular,
-              ),
-              verticalSpace(24),
-              SignupForm(),
-              verticalSpace(64),
-              AlreadyHaveAccountText(),
-            ],
-          );
+          return SignupBuilder();
         },
       ),
     );

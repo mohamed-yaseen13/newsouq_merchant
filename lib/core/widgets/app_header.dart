@@ -69,7 +69,7 @@ class _AppHeaderState extends State<AppHeader> {
                     children: [
                       Text(
                         widget.title,
-                        style: AppTextStyles.blackColor20FontSizeSemibold,
+                        style: AppTextStyles.black6ColorSubHeading3Medium,
                       ),
                       Spacer(),
                       SvgPicture.asset('assets/icons/Notification.svg'),
@@ -84,7 +84,7 @@ class _AppHeaderState extends State<AppHeader> {
                         child: Center(
                           child: Text(
                             'M',
-                            style: AppTextStyles.whiteColor16FontSizeMedium,
+                            style: AppTextStyles.whiteColor20FontSizeRegular,
                           ),
                         ),
                       ),
@@ -97,7 +97,7 @@ class _AppHeaderState extends State<AppHeader> {
                       horizontalSpace(16),
                       Text(
                         '/   ${widget.title}',
-                        style: AppTextStyles.gray5Color16FontSizeRegular,
+                        style: AppTextStyles.black3ColorLabel1Regular,
                       ),
                     ],
                   ),

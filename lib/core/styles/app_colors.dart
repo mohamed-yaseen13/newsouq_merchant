@@ -22,4 +22,14 @@ class AppColors {
   static const Color background = Color(0xFFF4F5FA);
 
   static const Color blue = Color(0xFF5570F1);
+
+  static const Color black3 = Color(0xFF8B8D97);
+
+  static const Color black2 = Color(0xFFABAFB1);
+
+  static const Color black6 = Color(0xFF45464E);
+
+  static const Color black5 = Color(0xFF53545C);
+
+  static const Color actionGreen = Color(0xFF519C66);
 }

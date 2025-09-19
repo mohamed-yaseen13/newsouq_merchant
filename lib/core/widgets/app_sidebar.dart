@@ -36,7 +36,7 @@ class AppSidebar extends StatelessWidget {
                 if (!collapsed)
                   Text(
                     'New Souq',
-                    style: AppTextStyles.blackColor32FontSizeSemibold,
+                    style: AppTextStyles.black6ColorSubHeading3Bold,
                   ),
               ],
             ),

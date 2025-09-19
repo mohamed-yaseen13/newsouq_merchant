@@ -7,7 +7,7 @@ import 'package:newsouq_merchant/core/widgets/email_text_form_field.dart';
 import 'package:newsouq_merchant/core/widgets/password_text_form_field.dart';
 import 'package:newsouq_merchant/core/widgets/username_text_form_field.dart';
 import 'package:newsouq_merchant/features/signup/presentation/cubit/signup_cubit.dart';
-import 'package:newsouq_merchant/features/signup/presentation/widgets/terms_and_condition_text.dart';
+//import 'package:newsouq_merchant/features/signup/presentation/widgets/terms_and_condition_text.dart';
 
 class SignupForm extends StatefulWidget {
   const SignupForm({super.key});
@@ -33,9 +33,9 @@ class _SignupFormState extends State<SignupForm> {
           EmailTextFormField(emailController: _emailController),
           verticalSpace(16),
           PasswordTextFormField(passwordController: _passwordController),
-          verticalSpace(16),
-          TermsAndConditionText(),
-          verticalSpace(48),
+          //verticalSpace(16),
+          //TermsAndConditionText(),
+          verticalSpace(32),
           Center(
             child: AppButton(
               onPressed: () {
@@ -47,7 +47,7 @@ class _SignupFormState extends State<SignupForm> {
                 }
               },
               desc: 'Create an Account',
-              descStyle: AppTextStyles.whiteColor16FontSizeMedium,
+              descStyle: AppTextStyles.whiteColor20FontSizeRegular,
             ),
           ),
         ],

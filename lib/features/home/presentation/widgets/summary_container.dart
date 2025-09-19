@@ -21,7 +21,7 @@ class SummaryContainer extends StatelessWidget {
               children: [
                 Text(
                   'Summary',
-                  style: AppTextStyles.blackColor32FontSizeSemibold,
+                  style: AppTextStyles.black6ColorParagraph1Medium,
                 ),
                 Spacer(),
                 Text('This Week'),

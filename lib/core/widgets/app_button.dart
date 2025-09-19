@@ -17,11 +17,10 @@ class AppButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.black,
+        backgroundColor: AppColors.blue,
         foregroundColor: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: 40, vertical: 16),
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(25)),
-        minimumSize: Size(350, 60),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        minimumSize: Size(180, 58),
       ),
       onPressed: onPressed,
       child: Text(desc, style: descStyle),

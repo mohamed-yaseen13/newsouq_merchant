@@ -42,7 +42,7 @@ class _LoginFormState extends State<LoginForm> {
               }
             },
             desc: 'Log In',
-            descStyle: AppTextStyles.whiteColor16FontSizeMedium,
+            descStyle: AppTextStyles.whiteColor20FontSizeRegular,
           ),
         ],
       ),

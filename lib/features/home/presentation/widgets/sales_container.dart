@@ -30,17 +30,17 @@ class SalesContainer extends StatelessWidget {
                 ],
               ),
               Spacer(),
-              Text('Sales'),
+              Text('Sales', style: AppTextStyles.black3ColorParagraph2Regular),
               Row(
                 children: [
                   Text(
                     '0.00',
-                    style: AppTextStyles.blackColor32FontSizeSemibold,
+                    style: AppTextStyles.black6ColorSubHeading3Medium,
                   ),
                   horizontalSpace(8),
                   Text(
                     '+0.00%',
-                    style: AppTextStyles.greenColor12FontSizeRegular,
+                    style: AppTextStyles.actionGreenColorLabel1Regular,
                   ),
                 ],
               ),

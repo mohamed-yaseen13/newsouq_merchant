@@ -14,15 +14,14 @@ class PasswordTextFormField extends StatefulWidget {
 }
 
 class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
-  bool isObscureText = false;
+  bool isObscureText = true;
   bool? isValid;
 
   @override
   Widget build(BuildContext context) {
     return AppTextFormField(
       controller: widget.passwordController,
-      label: "Password",
-      placeholder: "Enter Your Password",
+      placeholder: "Create a Strong Password",
       validator: (value) {
         if (value.isNullOrEmpty() || value!.length < 8) {
           setState(() {
@@ -56,6 +55,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
           : isValid!
           ? AppColors.green
           : AppColors.red,
+      prefixIcon: Image.asset('assets/icons/lock.png'),
     );
   }
 }

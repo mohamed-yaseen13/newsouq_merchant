@@ -13,7 +13,7 @@ class DontHaveAnAccountText extends StatelessWidget {
       children: [
         Text(
           "Don't have an account? ",
-          style: AppTextStyles.gray4Color16FontSizeRegular,
+          style: AppTextStyles.black2ColorParagraph2Regular,
         ),
         InkWell(
           onTap: () {
@@ -21,7 +21,7 @@ class DontHaveAnAccountText extends StatelessWidget {
           },
           child: Text(
             'Signup',
-            style: AppTextStyles.blackColor16FontSizeMediumUnderline,
+            style: AppTextStyles.blue2ColorParagraph2Regular,
           ),
         ),
       ],

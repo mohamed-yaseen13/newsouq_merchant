@@ -45,8 +45,8 @@ class SidebarItem extends StatelessWidget {
                 Text(
                   title,
                   style: isSelected
-                      ? AppTextStyles.whiteColor16FontSizeMedium
-                      : AppTextStyles.gray5Color16FontSizeRegular,
+                      ? AppTextStyles.whiteColorParagraph2Regular
+                      : AppTextStyles.black5ColorParagraph2Regular,
                 ),
             ],
           ),

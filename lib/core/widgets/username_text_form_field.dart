@@ -20,8 +20,7 @@ class _UsernameTextFormFieldState extends State<UsernameTextFormField> {
   Widget build(BuildContext context) {
     return AppTextFormField(
       controller: widget.nameController,
-      label: "Username",
-      placeholder: 'Enter You Name',
+      placeholder: 'You Full Name',
       validator: (value) {
         if (value.isNullOrEmpty() || value!.length < 3) {
           setState(() {
@@ -51,6 +50,7 @@ class _UsernameTextFormFieldState extends State<UsernameTextFormField> {
           : isValid!
           ? AppColors.green
           : AppColors.red,
+      prefixIcon: Image.asset('assets/icons/Profile.png'),
     );
   }
 }

@@ -21,8 +21,7 @@ class _EmailTextFormFieldState extends State<EmailTextFormField> {
   Widget build(BuildContext context) {
     return AppTextFormField(
       controller: widget.emailController,
-      label: 'Email',
-      placeholder: "Enter Your Email",
+      placeholder: "Your Email Address",
       textInputType: TextInputType.emailAddress,
       validator: (value) {
         if (value.isNullOrEmpty()) {
@@ -58,6 +57,7 @@ class _EmailTextFormFieldState extends State<EmailTextFormField> {
           : isValid!
           ? AppColors.green
           : AppColors.red,
+      prefixIcon: Image.asset('assets/icons/message.png'),
     );
   }
 }

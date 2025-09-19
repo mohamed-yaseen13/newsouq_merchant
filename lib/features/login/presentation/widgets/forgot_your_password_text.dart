@@ -11,7 +11,7 @@ class ForgotYourPasswordText extends StatelessWidget {
       children: [
         Text(
           "Forgot your password? ",
-          style: AppTextStyles.gray4Color16FontSizeRegular,
+          style: AppTextStyles.black2ColorParagraph2Regular,
         ),
         InkWell(
           onTap: () {
@@ -19,7 +19,7 @@ class ForgotYourPasswordText extends StatelessWidget {
           },
           child: Text(
             'Reset Your Password',
-            style: AppTextStyles.blackColor16FontSizeMediumUnderline,
+            style: AppTextStyles.blue2ColorParagraph2Regular,
           ),
         ),
       ],

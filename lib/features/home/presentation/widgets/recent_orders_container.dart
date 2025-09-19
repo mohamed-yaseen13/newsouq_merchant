@@ -26,7 +26,7 @@ class RecentOrdersContainer extends StatelessWidget {
             children: [
               Text(
                 'Resent Orders',
-                style: AppTextStyles.blackColor32FontSizeSemibold,
+                style: AppTextStyles.black6ColorParagraph1Medium,
               ),
               verticalSpace(100),
               Center(
@@ -36,20 +36,20 @@ class RecentOrdersContainer extends StatelessWidget {
                     verticalSpace(16),
                     Text(
                       'No Orders Yet',
-                      style: AppTextStyles.blackColor32FontSizeSemibold,
+                      style: AppTextStyles.blackColorSubHeading3Medium,
                       textAlign: TextAlign.center,
                     ),
                     verticalSpace(12),
                     Text(
                       'Add products to your store and start selling to see orders here.',
-                      style: AppTextStyles.gray5Color16FontSizeRegular,
+                      style: AppTextStyles.black3ColorParagraph2Regular,
                       textAlign: TextAlign.center,
                     ),
                     verticalSpace(16),
                     AppButton(
                       desc: 'New Product',
                       onPressed: () {},
-                      descStyle: AppTextStyles.whiteColor16FontSizeMedium,
+                      descStyle: AppTextStyles.whiteColorParagraph2Regular,
                     ),
                   ],
                 ),
