@@ -10,11 +10,11 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScreenLayout(
-      narrowBuilder: (ctx, sc, narrow) =>
-          NarrowHomeScreen(isNarrow: narrow, sidebarController: sc),
       sidebarPage: SidebarPage.dashboard,
       title: 'Dashboard',
       wideBuilder: (ctx, sc) => WideHomeScreen(sidebarController: sc),
+      narrowBuilder: (ctx, sc, narrow) =>
+          NarrowHomeScreen(isNarrow: narrow, sidebarController: sc),
     );
   }
 }

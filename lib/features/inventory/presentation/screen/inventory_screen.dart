@@ -10,11 +10,11 @@ class InventoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScreenLayout(
-      narrowBuilder: (ctx, sc, narrow) =>
-          NarrowInventoryScreen(isNarrow: narrow, sidebarController: sc),
       sidebarPage: SidebarPage.inventory,
       title: 'Inventory',
       wideBuilder: (ctx, sc) => WideInventoryScreen(sidebarController: sc),
+      narrowBuilder: (ctx, sc, narrow) =>
+          NarrowInventoryScreen(isNarrow: narrow, sidebarController: sc),
     );
   }
 }

@@ -10,11 +10,11 @@ class CustomersScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScreenLayout(
-      narrowBuilder: (ctx, sc, narrow) =>
-          NarrowCustomersScreen(isNarrow: narrow, sidebarController: sc),
       sidebarPage: SidebarPage.customers,
       title: 'Customers',
       wideBuilder: (ctx, sc) => WideCustomersScreen(sidebarController: sc),
+      narrowBuilder: (ctx, sc, narrow) =>
+          NarrowCustomersScreen(isNarrow: narrow, sidebarController: sc),
     );
   }
 }

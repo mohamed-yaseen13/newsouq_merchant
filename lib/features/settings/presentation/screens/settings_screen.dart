@@ -10,11 +10,11 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppScreenLayout(
-      narrowBuilder: (ctx, sc, narrow) =>
-          NarrowSettingsScreen(isNarrow: narrow, sidebarController: sc),
       sidebarPage: SidebarPage.settings,
       title: "Settings",
       wideBuilder: (ctx, sc) => WideSettingsScreen(sidebarController: sc),
+      narrowBuilder: (ctx, sc, narrow) =>
+          NarrowSettingsScreen(isNarrow: narrow, sidebarController: sc),
     );
   }
 }
