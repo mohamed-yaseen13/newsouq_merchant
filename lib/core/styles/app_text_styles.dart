@@ -78,4 +78,16 @@ class AppTextStyles {
     fontWeight: FontWeight.w500,
     color: AppColors.black6,
   );
+
+  static const TextStyle whiteColorSubHeading3Medium = TextStyle(
+    fontSize: 20,
+    fontWeight: FontWeight.w500,
+    color: Colors.white,
+  );
+
+  static const TextStyle white1ColorLabel1Regular = TextStyle(
+    fontSize: 12,
+    fontWeight: FontWeight.w300,
+    color: AppColors.white1,
+  );
 }

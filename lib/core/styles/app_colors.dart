@@ -32,4 +32,6 @@ class AppColors {
   static const Color black5 = Color(0xFF53545C);
 
   static const Color actionGreen = Color(0xFF519C66);
+
+  static const Color white1 = Color(0xFFDBDEEE);
 }
