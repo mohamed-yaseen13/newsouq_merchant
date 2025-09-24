@@ -5,18 +5,16 @@ import 'package:newsouq_merchant/core/helpers/spacing.dart';
 import 'package:newsouq_merchant/core/widgets/app_sidebar.dart';
 
 class AppScreenLayout extends StatelessWidget {
-  final String title;
   final SidebarPage sidebarPage;
+  final Widget Function(BuildContext, SidebarController) wideBuilder;
   final Widget Function(BuildContext, SidebarController, bool isNarrow)
   narrowBuilder;
-  final Widget Function(BuildContext, SidebarController) wideBuilder;
 
   AppScreenLayout({
     super.key,
-    required this.narrowBuilder,
     required this.sidebarPage,
-    required this.title,
     required this.wideBuilder,
+    required this.narrowBuilder,
   });
 
   final SidebarController sidebarController = SidebarController();

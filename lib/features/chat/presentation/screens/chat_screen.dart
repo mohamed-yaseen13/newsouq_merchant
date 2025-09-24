@@ -11,7 +11,6 @@ class ChatScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScreenLayout(
       sidebarPage: SidebarPage.conversations,
-      title: 'Conversation',
       wideBuilder: (ctx, sc) => WideChatScreen(sidebarController: sc),
       narrowBuilder: (ctx, sc, narrow) =>
           NarrowChatScreen(isNarrow: narrow, sidebarController: sc),

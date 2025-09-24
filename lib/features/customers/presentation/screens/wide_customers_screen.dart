@@ -19,6 +19,7 @@ class WideCustomersScreen extends StatelessWidget {
             child: AppHeader(
               isNarrow: false,
               title: "Customers",
+              subTitle: '/  Customers',
               sidebarController: sidebarController,
             ),
           ),

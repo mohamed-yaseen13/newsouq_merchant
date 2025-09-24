@@ -11,7 +11,6 @@ class CustomersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScreenLayout(
       sidebarPage: SidebarPage.customers,
-      title: 'Customers',
       wideBuilder: (ctx, sc) => WideCustomersScreen(sidebarController: sc),
       narrowBuilder: (ctx, sc, narrow) =>
           NarrowCustomersScreen(isNarrow: narrow, sidebarController: sc),

@@ -22,6 +22,7 @@ class NarrowOrdersScreen extends StatelessWidget {
           AppHeader(
             isNarrow: isNarrow,
             title: 'Orders',
+            subTitle: '/  Orders',
             sidebarController: sidebarController,
           ),
         ],

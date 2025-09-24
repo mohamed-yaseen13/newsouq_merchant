@@ -19,6 +19,7 @@ class WideSettingsScreen extends StatelessWidget {
             child: AppHeader(
               isNarrow: false,
               title: "Settings",
+              subTitle: '/  Settings',
               sidebarController: sidebarController,
             ),
           ),

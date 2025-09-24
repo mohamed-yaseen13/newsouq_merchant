@@ -23,6 +23,7 @@ class WideInventoryScreen extends StatelessWidget {
             child: AppHeader(
               isNarrow: false,
               title: "Inventory",
+              subTitle: '/  Inventory',
               sidebarController: sidebarController,
             ),
           ),

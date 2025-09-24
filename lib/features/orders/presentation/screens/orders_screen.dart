@@ -11,7 +11,6 @@ class OrdersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScreenLayout(
       sidebarPage: SidebarPage.orders,
-      title: "Orders",
       wideBuilder: (ctx, sc) => WideOrdersScreen(sidebarController: sc),
       narrowBuilder: (ctx, sc, narrow) =>
           NarrowOrdersScreen(isNarrow: narrow, sidebarController: sc),

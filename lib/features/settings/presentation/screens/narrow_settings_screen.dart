@@ -21,6 +21,7 @@ class NarrowSettingsScreen extends StatelessWidget {
           AppHeader(
             isNarrow: isNarrow,
             title: 'Settings',
+            subTitle: '/  Settings',
             sidebarController: sidebarController,
           ),
         ],

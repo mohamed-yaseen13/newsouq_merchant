@@ -11,6 +11,7 @@ class AppButton extends StatelessWidget {
   final double? borderRadius;
   final double? height;
   final double? width;
+  final double? minWidth;
   final String? prefixIconPath;
   final String? suffixIconPath;
   final Color? borderColor;
@@ -31,29 +32,33 @@ class AppButton extends StatelessWidget {
     this.isprefixIcon = false,
     this.isSuffixIcon = false,
     this.suffixIconPath,
+    this.minWidth,
   });
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: backgroundColor ?? AppColors.blue,
-        foregroundColor: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius ?? 12),
-          side: BorderSide(color: borderColor ?? Colors.transparent),
+    return SizedBox(
+      width: width,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          backgroundColor: backgroundColor ?? AppColors.blue,
+          foregroundColor: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius ?? 12),
+            side: BorderSide(color: borderColor ?? Colors.transparent),
+          ),
+          minimumSize: Size(minWidth ?? 180, height ?? 58),
         ),
-        minimumSize: Size(width ?? 180, height ?? 58),
-      ),
-      onPressed: onPressed,
-      child: Row(
-        children: [
-          if (isprefixIcon) SvgPicture.asset(prefixIconPath!),
-          if (isprefixIcon) horizontalSpace(18),
-          Text(desc, style: descStyle),
-          if (isSuffixIcon) horizontalSpace(18),
-          if (isSuffixIcon) SvgPicture.asset(suffixIconPath!),
-        ],
+        onPressed: onPressed,
+        child: Row(
+          children: [
+            if (isprefixIcon) SvgPicture.asset(prefixIconPath!),
+            if (isprefixIcon) horizontalSpace(18),
+            Text(desc, style: descStyle),
+            if (isSuffixIcon) horizontalSpace(18),
+            if (isSuffixIcon) SvgPicture.asset(suffixIconPath!),
+          ],
+        ),
       ),
     );
   }

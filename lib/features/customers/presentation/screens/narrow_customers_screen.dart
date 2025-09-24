@@ -22,6 +22,7 @@ class NarrowCustomersScreen extends StatelessWidget {
           AppHeader(
             isNarrow: isNarrow,
             title: 'Customers',
+            subTitle: '/  Customers',
             sidebarController: sidebarController,
           ),
         ],

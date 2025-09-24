@@ -87,7 +87,7 @@ final List<DataRow> _inventoryRows = [
           descStyle: AppTextStyles.black3ColorLabel1Regular,
           borderRadius: 12,
           height: 42,
-          width: 24,
+          minWidth: 24,
           borderColor: Color(0xFFE2E8F0),
         ),
       ),

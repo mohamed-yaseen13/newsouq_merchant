@@ -14,4 +14,6 @@ class AppRoutes {
   static const String chatScreen = 'chatScreen';
 
   static const String settingsScreen = 'settingsScreen';
+
+  static const String addProductScreen = 'addProductScreen';
 }

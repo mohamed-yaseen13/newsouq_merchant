@@ -9,12 +9,14 @@ class AppHeader extends StatefulWidget {
   final bool isNarrow;
   final String title;
   final SidebarController sidebarController;
+  final String? subTitle;
 
   const AppHeader({
     super.key,
     required this.isNarrow,
     required this.title,
     required this.sidebarController,
+    this.subTitle,
   });
 
   @override
@@ -96,7 +98,7 @@ class _AppHeaderState extends State<AppHeader> {
                       SvgPicture.asset('assets/icons/Home.svg'),
                       horizontalSpace(16),
                       Text(
-                        '/   ${widget.title}',
+                        widget.subTitle ?? '',
                         style: AppTextStyles.black3ColorLabel1Regular,
                       ),
                     ],

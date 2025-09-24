@@ -5,6 +5,8 @@ import 'package:newsouq_merchant/core/routing/app_routes.dart';
 import 'package:newsouq_merchant/features/chat/presentation/screens/chat_screen.dart';
 import 'package:newsouq_merchant/features/customers/presentation/screens/customers_screen.dart';
 import 'package:newsouq_merchant/features/home/presentation/screens/home_screen.dart';
+import 'package:newsouq_merchant/features/inventory/presentation/cubit/add_product_cubit.dart';
+import 'package:newsouq_merchant/features/inventory/presentation/screen/add_product_screen.dart';
 import 'package:newsouq_merchant/features/inventory/presentation/screen/inventory_screen.dart';
 import 'package:newsouq_merchant/features/login/presentation/cubit/login_cubit.dart';
 import 'package:newsouq_merchant/features/login/presentation/screen/login_screen.dart';
@@ -67,6 +69,15 @@ class AppRouter {
       case AppRoutes.settingsScreen:
         return MaterialPageRoute(
           builder: (_) => SettingsScreen(),
+          settings: settings,
+        );
+
+      case AppRoutes.addProductScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<AddProductCubit>(),
+            child: AddProductScreen(),
+          ),
           settings: settings,
         );
       default:

@@ -26,6 +26,7 @@ class NarrowInventoryScreen extends StatelessWidget {
           AppHeader(
             isNarrow: isNarrow,
             title: 'Inventory',
+            subTitle: '/  Inventory',
             sidebarController: sidebarController,
           ),
           verticalSpace(12),

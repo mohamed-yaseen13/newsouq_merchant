@@ -19,6 +19,7 @@ class WideChatScreen extends StatelessWidget {
             child: AppHeader(
               isNarrow: false,
               title: "Conversations",
+              subTitle: '/  Conversations',
               sidebarController: sidebarController,
             ),
           ),

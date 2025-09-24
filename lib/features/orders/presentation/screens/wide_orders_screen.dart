@@ -19,6 +19,7 @@ class WideOrdersScreen extends StatelessWidget {
             child: AppHeader(
               isNarrow: false,
               title: "Orders",
+              subTitle: '/  Orders',
               sidebarController: sidebarController,
             ),
           ),

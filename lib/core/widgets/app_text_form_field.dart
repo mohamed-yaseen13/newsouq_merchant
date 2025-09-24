@@ -12,6 +12,7 @@ class AppTextFormField extends StatelessWidget {
   final Color? borderColor;
   final bool isObscureText;
   final double? width;
+  final int? maxLines;
 
   const AppTextFormField({
     super.key,
@@ -24,6 +25,7 @@ class AppTextFormField extends StatelessWidget {
     this.width,
     this.isObscureText = false,
     this.prefixIcon,
+    this.maxLines,
   });
 
   @override
@@ -33,6 +35,7 @@ class AppTextFormField extends StatelessWidget {
     return SizedBox(
       width: width ?? 500,
       child: TextFormField(
+        maxLines: maxLines,
         obscureText: isObscureText,
         keyboardType: textInputType,
         controller: controller,

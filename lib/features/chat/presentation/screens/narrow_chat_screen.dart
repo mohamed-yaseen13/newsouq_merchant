@@ -21,6 +21,7 @@ class NarrowChatScreen extends StatelessWidget {
           AppHeader(
             isNarrow: isNarrow,
             title: 'Conversations',
+            subTitle: '/  Conversations',
             sidebarController: sidebarController,
           ),
         ],
