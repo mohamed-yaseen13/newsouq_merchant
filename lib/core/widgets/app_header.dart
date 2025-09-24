@@ -6,14 +6,12 @@ import 'package:newsouq_merchant/core/styles/app_colors.dart';
 import 'package:newsouq_merchant/core/styles/app_text_styles.dart';
 
 class AppHeader extends StatefulWidget {
-  final bool isNarrow;
   final String title;
   final SidebarController sidebarController;
   final String? subTitle;
 
   const AppHeader({
     super.key,
-    required this.isNarrow,
     required this.title,
     required this.sidebarController,
     this.subTitle,
@@ -35,30 +33,27 @@ class _AppHeaderState extends State<AppHeader> {
         padding: EdgeInsets.only(top: 16, bottom: 8, right: 16, left: 16),
         child: Row(
           children: [
-            IgnorePointer(
-              ignoring: widget.isNarrow,
-              child: InkWell(
-                onTap: () {
-                  setState(() {});
-                  widget.sidebarController.toggle();
-                },
-                child: Container(
-                  width: 38,
-                  height: 38,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(color: AppColors.gray4),
-                    color: Colors.white,
-                  ),
-                  child: SvgPicture.asset(
-                    widget.sidebarController.isCollapsed.value
-                        ? 'assets/icons/arrow-right-double-line.svg'
-                        : 'assets/icons/arrow-left-double-line.svg',
-                    width: 32,
-                    height: 32,
-                    // ignore: deprecated_member_use
-                    color: AppColors.gray4,
-                  ),
+            InkWell(
+              onTap: () {
+                setState(() {});
+                widget.sidebarController.toggle();
+              },
+              child: Container(
+                width: 38,
+                height: 38,
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(color: AppColors.gray4),
+                  color: Colors.white,
+                ),
+                child: SvgPicture.asset(
+                  widget.sidebarController.isCollapsed.value
+                      ? 'assets/icons/arrow-right-double-line.svg'
+                      : 'assets/icons/arrow-left-double-line.svg',
+                  width: 32,
+                  height: 32,
+                  // ignore: deprecated_member_use
+                  color: AppColors.gray4,
                 ),
               ),
             ),

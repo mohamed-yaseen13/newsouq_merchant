@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsouq_merchant/core/constants/app_constants.dart';
 import 'package:newsouq_merchant/core/widgets/app_screen_layout.dart';
-import 'package:newsouq_merchant/features/orders/presentation/screens/narrow_orders_screen.dart';
-import 'package:newsouq_merchant/features/orders/presentation/screens/wide_orders_screen.dart';
 
 class OrdersScreen extends StatelessWidget {
   const OrdersScreen({super.key});
@@ -11,9 +9,9 @@ class OrdersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScreenLayout(
       sidebarPage: SidebarPage.orders,
-      wideBuilder: (ctx, sc) => WideOrdersScreen(sidebarController: sc),
-      narrowBuilder: (ctx, sc, narrow) =>
-          NarrowOrdersScreen(isNarrow: narrow, sidebarController: sc),
+      appHeaderTitle: "Orders",
+      appHeaderSubTitle: '/  Orders',
+      children: [],
     );
   }
 }

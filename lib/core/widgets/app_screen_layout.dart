@@ -2,33 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:newsouq_merchant/core/constants/app_constants.dart';
 import 'package:newsouq_merchant/core/controllers/sidebar_controller.dart';
 import 'package:newsouq_merchant/core/helpers/spacing.dart';
+import 'package:newsouq_merchant/core/widgets/app_header.dart';
 import 'package:newsouq_merchant/core/widgets/app_sidebar.dart';
 
 class AppScreenLayout extends StatelessWidget {
   final SidebarPage sidebarPage;
-  final Widget Function(BuildContext, SidebarController) wideBuilder;
-  final Widget Function(BuildContext, SidebarController, bool isNarrow)
-  narrowBuilder;
+  final List<Widget> children;
+  final String appHeaderTitle;
+  final String? appHeaderSubTitle;
 
   AppScreenLayout({
     super.key,
     required this.sidebarPage,
-    required this.wideBuilder,
-    required this.narrowBuilder,
+    required this.children,
+    required this.appHeaderTitle,
+    this.appHeaderSubTitle,
   });
 
   final SidebarController sidebarController = SidebarController();
 
   @override
   Widget build(BuildContext context) {
-    final double screenWidth = MediaQuery.of(context).size.width;
-    final bool isWide = screenWidth > 900;
-    final bool isNarrow = screenWidth < 600;
-
-    if (!isWide) {
-      sidebarController.isCollapsed.value = true;
-    }
-
     return Scaffold(
       body: Padding(
         padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
@@ -45,9 +39,23 @@ class AppScreenLayout extends StatelessWidget {
             ),
             horizontalSpace(12),
             Expanded(
-              child: isWide
-                  ? wideBuilder(context, sidebarController)
-                  : narrowBuilder(context, sidebarController, isNarrow),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 100,
+                      child: AppHeader(
+                        title: appHeaderTitle,
+                        sidebarController: sidebarController,
+                        subTitle: appHeaderSubTitle,
+                      ),
+                    ),
+                    verticalSpace(12),
+                    ...children,
+                  ],
+                ),
+              ),
             ),
           ],
         ),

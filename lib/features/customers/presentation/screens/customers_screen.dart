@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newsouq_merchant/core/constants/app_constants.dart';
 import 'package:newsouq_merchant/core/widgets/app_screen_layout.dart';
-import 'package:newsouq_merchant/features/customers/presentation/screens/narrow_customers_screen.dart';
-import 'package:newsouq_merchant/features/customers/presentation/screens/wide_customers_screen.dart';
 
 class CustomersScreen extends StatelessWidget {
   const CustomersScreen({super.key});
@@ -11,9 +9,9 @@ class CustomersScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppScreenLayout(
       sidebarPage: SidebarPage.customers,
-      wideBuilder: (ctx, sc) => WideCustomersScreen(sidebarController: sc),
-      narrowBuilder: (ctx, sc, narrow) =>
-          NarrowCustomersScreen(isNarrow: narrow, sidebarController: sc),
+      appHeaderTitle: "Customers",
+      appHeaderSubTitle: '/  Customers',
+      children: [],
     );
   }
 }
