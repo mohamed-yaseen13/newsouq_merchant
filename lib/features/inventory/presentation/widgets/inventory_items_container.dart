@@ -58,10 +58,7 @@ class InventoryItemsContainer extends StatelessWidget {
 final List<DataRow> _inventoryRows = [
   DataRow(
     selected: false, // ✅ initial state
-    onSelectChanged: (selectedt) {
-      // ✅ handle checkbox selection
-      debugPrint('Row selected: $selectedt');
-    },
+    onSelectChanged: (selectedt) {},
     cells: [
       DataCell(
         Row(

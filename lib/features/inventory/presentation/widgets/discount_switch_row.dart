@@ -15,19 +15,25 @@ class DiscountSwitchRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text('Discount', style: AppTextStyles.black6ColorParagraph1Medium),
-        Spacer(),
-        Text('Add Discount', style: AppTextStyles.black5ColorParagraph2Regular),
-        horizontalSpace(4),
-        Switch(
-          value: isThereADiscount,
-          onChanged: onChanged,
-          activeThumbColor: AppColors.blue,
-          inactiveThumbColor: AppColors.gray1,
-        ),
-      ],
+    return SizedBox(
+      width: 500,
+      child: Row(
+        children: [
+          Text('Discount', style: AppTextStyles.black6ColorParagraph1Medium),
+          Spacer(),
+          Text(
+            'Add Discount',
+            style: AppTextStyles.black5ColorParagraph2Regular,
+          ),
+          horizontalSpace(4),
+          Switch(
+            value: isThereADiscount,
+            onChanged: onChanged,
+            activeThumbColor: AppColors.blue,
+            inactiveThumbColor: AppColors.gray1,
+          ),
+        ],
+      ),
     );
   }
 }

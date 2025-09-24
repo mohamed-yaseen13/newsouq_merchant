@@ -16,7 +16,7 @@ class RecentOrdersContainer extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: isWide ? 4 : 0),
       child: Container(
-        height: 726,
+        height: 590,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(12),

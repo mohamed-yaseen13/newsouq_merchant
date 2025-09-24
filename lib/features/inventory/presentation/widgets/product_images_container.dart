@@ -118,6 +118,7 @@ class _ProductImagesContainerState extends State<ProductImagesContainer> {
                           height: 150,
                         ),
                       ),
+                      Spacer(),
                       SvgPicture.asset(
                         'assets/images/image_placeholder.svg',
                         width: (containerWidth - 48) / 2,

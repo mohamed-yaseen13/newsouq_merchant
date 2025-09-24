@@ -57,8 +57,7 @@ class NewItemTextRow extends StatelessWidget {
                 backgroundColor: AppColors.blue,
                 desc: 'Save & Publish',
                 onPressed: () {
-                  if (formKey.currentState!.validate()) {
-                    debugPrint('Good');
+                  if (formKey.currentState!.validate() && images.isNotEmpty) {
                     final addProductRequestModel = AddProductRequestModel(
                       name: productNameController.text,
                       category: categoryController.text,

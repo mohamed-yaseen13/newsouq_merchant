@@ -22,7 +22,6 @@ class AddProductApiService {
       for (int i = 0; i < model.images.length; i++) {
         final bytes = model.images[i];
         final base64Image = base64Encode(bytes);
-        debugPrint('for loop working');
         final imageUrl = await cloudinary.uploader().upload(
           "data:image/png;base64,$base64Image",
           params: UploadParams(

@@ -16,24 +16,25 @@ class DiscountRow extends StatelessWidget {
     return Column(
       children: [
         verticalSpace(18),
-        Row(
-          children: [
-            Expanded(
-              child: AppTextFormField(
+        SizedBox(
+          width: 500,
+          child: Row(
+            children: [
+              AppTextFormField(
+                width: 220,
                 controller: discountController,
                 placeholder: 'Discount',
                 textInputType: TextInputType.number,
               ),
-            ),
-            horizontalSpace(8),
-            Expanded(
-              child: AppTextFormField(
+              Spacer(),
+              AppTextFormField(
+                width: 220,
                 controller: sellingPriceController,
                 placeholder: 'Selling Price',
                 textInputType: TextInputType.number,
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ],
     );
