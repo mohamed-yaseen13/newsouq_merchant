@@ -6,6 +6,7 @@ import 'package:newsouq_merchant/features/chat/presentation/screens/chat_screen.
 import 'package:newsouq_merchant/features/customers/presentation/screens/customers_screen.dart';
 import 'package:newsouq_merchant/features/home/presentation/screens/home_screen.dart';
 import 'package:newsouq_merchant/features/inventory/presentation/cubit/add_product_cubit.dart';
+import 'package:newsouq_merchant/features/inventory/presentation/screen/add_bulk_products_screen.dart';
 import 'package:newsouq_merchant/features/inventory/presentation/screen/add_product_screen.dart';
 import 'package:newsouq_merchant/features/inventory/presentation/screen/inventory_screen.dart';
 import 'package:newsouq_merchant/features/login/presentation/cubit/login_cubit.dart';
@@ -77,6 +78,15 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => getIt<AddProductCubit>(),
             child: AddProductScreen(),
+          ),
+          settings: settings,
+        );
+
+      case AppRoutes.addBulkProductsScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<AddProductCubit>(),
+            child: AddBulkProductsScreen(),
           ),
           settings: settings,
         );

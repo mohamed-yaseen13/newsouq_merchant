@@ -16,4 +16,6 @@ class AppRoutes {
   static const String settingsScreen = 'settingsScreen';
 
   static const String addProductScreen = 'addProductScreen';
+
+  static const String addBulkProductsScreen = 'addBulkProductsScreen';
 }

@@ -53,6 +53,7 @@ class AddProductApiService {
     await firestore
         .collection(DatabaseConstants.productsCollection)
         .doc(email)
-        .set(productData);
+        .collection('items')
+        .add(productData);
   }
 }
