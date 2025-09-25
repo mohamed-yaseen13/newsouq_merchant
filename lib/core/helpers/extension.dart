@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart';
+import 'package:web/web.dart' as web;
 
 extension Navigation on BuildContext {
   Future<dynamic> pushNamed(String routeName, {Object? arguments}) {
@@ -30,4 +31,15 @@ extension StringExtension on String? {
 
 extension ListExtension<T> on List<T>? {
   bool isNullOrEmpty() => this == null || this!.isEmpty;
+}
+
+extension FileListX on web.FileList {
+  List<web.File> toList() {
+    final result = <web.File>[];
+    for (var i = 0; i < length; i++) {
+      final file = item(i);
+      if (file != null) result.add(file);
+    }
+    return result;
+  }
 }

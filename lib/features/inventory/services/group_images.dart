@@ -1,39 +1,47 @@
 import 'dart:async';
 import 'dart:typed_data';
-// ignore: deprecated_member_use, avoid_web_libraries_in_flutter
-import 'dart:html' as html;
-// ignore: deprecated_member_use, avoid_web_libraries_in_flutter
-import 'dart:js_util' as js_util;
+import 'dart:js_interop';
+import 'dart:js_interop_unsafe';
+import 'package:web/web.dart' as web;
 
 import 'package:newsouq_merchant/features/inventory/services/picked_images_group.dart';
 
+extension WebFileRelativePath on web.File {
+  String get relativePath {
+    final jsValue = (this as JSObject).getProperty('webkitRelativePath'.toJS);
+    return jsValue != null ? (jsValue as JSString).toDart : name;
+  }
+}
+
 class GroupImages {
   static Future<List<PickedImageGroup>> groupImagesByProduct(
-    List<html.File> files,
+    List<web.File> files,
   ) async {
     final Map<String, List<Uint8List>> grouped = {};
 
     for (final file in files) {
-      final relativePath = js_util.getProperty<String>(
-        file,
-        'webkitRelativePath',
-      );
-
+      final relativePath = file.relativePath;
       final segments = relativePath.split('/');
       final productName = (segments.length >= 2)
           ? segments[1]
           : 'UNKNOWN_PRODUCT';
 
-      final reader = html.FileReader();
+      final reader = web.FileReader();
       final completer = Completer<Uint8List>();
 
       reader.readAsArrayBuffer(file);
       reader.onLoadEnd.listen((_) {
-        completer.complete(reader.result as Uint8List);
+        final result = reader.result;
+        if (result != null) {
+          final buffer = result as JSArrayBuffer;
+          final dartBuffer = buffer.toDart;
+          completer.complete(Uint8List.view(dartBuffer));
+        } else {
+          completer.completeError('Failed to read file: ${file.name}');
+        }
       });
 
       final bytes = await completer.future;
-
       grouped.putIfAbsent(productName, () => []).add(bytes);
     }
 

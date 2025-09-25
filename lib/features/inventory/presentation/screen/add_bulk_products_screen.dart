@@ -3,6 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:newsouq_merchant/core/constants/app_constants.dart';
+import 'package:newsouq_merchant/core/helpers/extension.dart';
 import 'package:newsouq_merchant/core/helpers/spacing.dart';
 import 'package:newsouq_merchant/core/styles/app_text_styles.dart';
 import 'package:newsouq_merchant/core/widgets/app_button.dart';
@@ -13,10 +14,7 @@ import 'package:newsouq_merchant/features/inventory/presentation/widgets/upload_
 import 'package:newsouq_merchant/features/inventory/presentation/widgets/upload_images_folder_container.dart';
 import 'package:newsouq_merchant/features/inventory/services/group_images.dart';
 import 'package:newsouq_merchant/features/inventory/services/parse_excel_file.dart';
-// ignore: deprecated_member_use, avoid_web_libraries_in_flutter
-import 'dart:html' as html;
-// ignore: deprecated_member_use, avoid_web_libraries_in_flutter
-import 'dart:js_util' as js_util;
+import 'package:web/web.dart' as web;
 
 class AddBulkProductsScreen extends StatefulWidget {
   const AddBulkProductsScreen({super.key});
@@ -26,7 +24,7 @@ class AddBulkProductsScreen extends StatefulWidget {
 }
 
 class _AddBulkProductsScreenState extends State<AddBulkProductsScreen> {
-  List<html.File>? pickedFiles;
+  List<web.File>? pickedFiles;
   String? imagesFolderPath;
   Uint8List? excelFileBytes;
 
@@ -43,45 +41,19 @@ class _AddBulkProductsScreenState extends State<AddBulkProductsScreen> {
   }
 
   void _pickImagesFolder() {
-    final uploadInput = html.FileUploadInputElement();
+    final uploadInput =
+        web.document.createElement('input') as web.HTMLInputElement;
+    uploadInput.type = 'file';
     uploadInput.multiple = true;
-    uploadInput.setAttribute("webkitdirectory", "");
+    uploadInput.setAttribute('webkitdirectory', '');
 
     uploadInput.onChange.listen((event) {
       final files = uploadInput.files;
       if (files != null) {
-        pickedFiles = files.toList();
-
-        final Map<String, List<String>> tempGrouped = {};
-
-        debugPrint("📂 Picked ${pickedFiles!.length} files");
-
-        for (final file in pickedFiles!) {
-          final relativePath = js_util.getProperty<String>(
-            file,
-            'webkitRelativePath',
-          );
-          debugPrint("🔎 Full path: $relativePath");
-
-          final folderName = (relativePath.isNotEmpty)
-              ? relativePath.split('/').length > 1
-                    ? relativePath.split('/')[1]
-                    : 'UNKNOWN_FOLDER'
-              : 'UNKNOWN_FOLDER';
-
-          tempGrouped.putIfAbsent(folderName, () => []);
-          tempGrouped[folderName]!.add(file.name);
-        }
-
-        tempGrouped.forEach((folder, files) {
-          debugPrint("🔸 Product Folder: $folder");
-          for (final f in files) {
-            debugPrint("    - $f");
-          }
-        });
-
+        final dartFiles = files.toList();
         setState(() {
-          imagesFolderPath = "Selected ${pickedFiles!.length} images";
+          pickedFiles = dartFiles;
+          imagesFolderPath = dartFiles.map((file) => file.name).join(', ');
         });
       }
     });
