@@ -28,10 +28,13 @@ class _LoginFormState extends State<LoginForm> {
         children: [
           EmailTextFormField(emailController: _emailController),
           verticalSpace(16),
-          PasswordTextFormField(passwordController: _passwordController),
+          PasswordTextFormField(
+            passwordController: _passwordController,
+            placeholder: "Password",
+          ),
           verticalSpace(16),
           ForgotYourPasswordText(),
-          verticalSpace(48),
+          verticalSpace(32),
           AppButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
@@ -43,6 +46,7 @@ class _LoginFormState extends State<LoginForm> {
             },
             desc: 'Log In',
             descStyle: AppTextStyles.whiteColor20FontSizeRegular,
+            width: 105,
           ),
         ],
       ),

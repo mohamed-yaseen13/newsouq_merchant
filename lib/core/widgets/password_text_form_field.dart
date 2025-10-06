@@ -5,9 +5,14 @@ import 'package:newsouq_merchant/core/styles/app_colors.dart';
 import 'package:newsouq_merchant/core/widgets/app_text_form_field.dart';
 
 class PasswordTextFormField extends StatefulWidget {
+  final String placeholder;
   final TextEditingController passwordController;
 
-  const PasswordTextFormField({super.key, required this.passwordController});
+  const PasswordTextFormField({
+    super.key,
+    required this.passwordController,
+    required this.placeholder,
+  });
 
   @override
   State<PasswordTextFormField> createState() => _PasswordTextFormFieldState();
@@ -22,7 +27,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
     return AppTextFormField(
       maxLines: 1,
       controller: widget.passwordController,
-      placeholder: "Create a Strong Password",
+      placeholder: widget.placeholder,
       validator: (value) {
         if (value.isNullOrEmpty() || value!.length < 8) {
           setState(() {

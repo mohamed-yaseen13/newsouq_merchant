@@ -32,7 +32,10 @@ class _SignupFormState extends State<SignupForm> {
           verticalSpace(16),
           EmailTextFormField(emailController: _emailController),
           verticalSpace(16),
-          PasswordTextFormField(passwordController: _passwordController),
+          PasswordTextFormField(
+            passwordController: _passwordController,
+            placeholder: 'Create a Strong Password',
+          ),
           verticalSpace(32),
           Center(
             child: AppButton(
