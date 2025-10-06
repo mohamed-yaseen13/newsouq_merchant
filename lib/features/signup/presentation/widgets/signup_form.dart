@@ -33,8 +33,6 @@ class _SignupFormState extends State<SignupForm> {
           EmailTextFormField(emailController: _emailController),
           verticalSpace(16),
           PasswordTextFormField(passwordController: _passwordController),
-          //verticalSpace(16),
-          //TermsAndConditionText(),
           verticalSpace(32),
           Center(
             child: AppButton(
@@ -48,6 +46,7 @@ class _SignupFormState extends State<SignupForm> {
               },
               desc: 'Create an Account',
               descStyle: AppTextStyles.whiteColor20FontSizeRegular,
+              width: 220,
             ),
           ),
         ],
