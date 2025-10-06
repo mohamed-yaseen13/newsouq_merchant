@@ -20,6 +20,7 @@ class _PasswordTextFormFieldState extends State<PasswordTextFormField> {
   @override
   Widget build(BuildContext context) {
     return AppTextFormField(
+      maxLines: 1,
       controller: widget.passwordController,
       placeholder: "Create a Strong Password",
       validator: (value) {

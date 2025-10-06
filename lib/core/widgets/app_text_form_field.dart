@@ -12,7 +12,7 @@ class AppTextFormField extends StatelessWidget {
   final Color? borderColor;
   final bool isObscureText;
   final double? width;
-  final int? maxLines;
+  final int maxLines;
 
   const AppTextFormField({
     super.key,
@@ -25,7 +25,7 @@ class AppTextFormField extends StatelessWidget {
     this.width,
     this.isObscureText = false,
     this.prefixIcon,
-    this.maxLines,
+    this.maxLines = 1,
   });
 
   @override
