@@ -51,6 +51,7 @@ class AppButton extends StatelessWidget {
         ),
         onPressed: onPressed,
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (isprefixIcon) SvgPicture.asset(prefixIconPath!),
             if (isprefixIcon) horizontalSpace(18),

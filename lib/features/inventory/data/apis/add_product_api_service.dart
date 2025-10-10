@@ -47,13 +47,13 @@ class AddProductApiService {
       'imagesUrl': secureImagesUrl,
     };
 
-    // To-Do get seller email from signup
+    // To-Do get seller name from signup
     final email = '01221316865m@gmail.com';
 
     await firestore
-        .collection(DatabaseConstants.productsCollection)
+        .collection(DatabaseConstants.merchantsCollection)
         .doc(email)
-        .collection('items')
+        .collection(DatabaseConstants.productsCollection)
         .add(productData);
   }
 }
