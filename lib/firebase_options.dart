@@ -53,12 +53,13 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBodYvJMQmYC_q_AGzdfGyLzBMy7AYX6Co',
-    appId: '1:75921128464:web:fed373a38249fe4b1ede95',
-    messagingSenderId: '75921128464',
-    projectId: 'newsouq-merchant',
-    authDomain: 'newsouq-merchant.firebaseapp.com',
-    storageBucket: 'newsouq-merchant.firebasestorage.app',
-    measurementId: 'G-LWYC1CCLNM',
+    apiKey: 'AIzaSyAfnJ_YY4POu0WoQfBDm5EPhQuYzcPrzmc',
+    appId: '1:418718898718:web:bcd6e27fae099b53ab6c0f',
+    messagingSenderId: '418718898718',
+    projectId: 'newsouq-2df73',
+    authDomain: 'newsouq-2df73.firebaseapp.com',
+    storageBucket: 'newsouq-2df73.firebasestorage.app',
+    measurementId: 'G-7Y89Z6Q0WK',
   );
+
 }
