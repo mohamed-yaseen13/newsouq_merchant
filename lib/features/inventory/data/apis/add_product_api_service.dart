@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:newsouq_merchant/core/constants/database_constants.dart';
+import 'package:newsouq_merchant/core/helpers/shared_pref.dart';
 import 'package:newsouq_merchant/features/inventory/data/models/add_product_request_model.dart';
 import 'package:cloudinary_api/uploader/cloudinary_uploader.dart';
 // ignore: implementation_imports
@@ -47,12 +48,11 @@ class AddProductApiService {
       'imagesUrl': secureImagesUrl,
     };
 
-    // To-Do get seller name from signup
-    final email = '01221316865m@gmail.com';
+    final sellerEmail = SharedPref.getUserEmail();
 
     await firestore
         .collection(DatabaseConstants.merchantsCollection)
-        .doc(email)
+        .doc(sellerEmail)
         .collection(DatabaseConstants.productsCollection)
         .add(productData);
   }
