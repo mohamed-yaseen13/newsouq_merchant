@@ -39,7 +39,9 @@ class AddProductApiService {
 
     final productData = {
       'name': model.name,
-      'category': model.category,
+      'category':
+          model.category[0].toUpperCase() +
+          model.category.substring(1).toLowerCase(),
       'costPrice': model.costPrice,
       'quantity': model.quantity,
       'discount': model.discount,
@@ -55,5 +57,15 @@ class AddProductApiService {
         .doc(sellerEmail)
         .collection(DatabaseConstants.productsCollection)
         .add(productData);
+
+    await firestore
+        .collection(DatabaseConstants.merchantsCollection)
+        .doc(sellerEmail)
+        .set({
+          DatabaseConstants.categoriesCollection: FieldValue.arrayUnion([
+            model.category[0].toUpperCase() +
+                model.category.substring(1).toLowerCase(),
+          ]),
+        }, SetOptions(merge: true));
   }
 }
