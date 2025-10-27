@@ -19,4 +19,17 @@ class SharedPref {
   static String getUserEmail() {
     return _prefs!.getString(userEmailKey) ?? '';
   }
+
+  // user name key
+  static const String userNameKey = 'userNameKey';
+
+  // set user name
+  static Future<void> setUserName(String name) async {
+    await _prefs!.setString(userNameKey, name);
+  }
+
+  // get user name
+  static String getUsername() {
+    return _prefs!.getString(userNameKey) ?? '';
+  }
 }

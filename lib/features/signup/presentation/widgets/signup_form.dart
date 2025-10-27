@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:newsouq_merchant/core/helpers/shared_pref.dart';
 import 'package:newsouq_merchant/core/helpers/spacing.dart';
 import 'package:newsouq_merchant/core/styles/app_text_styles.dart';
 import 'package:newsouq_merchant/core/widgets/app_button.dart';
@@ -46,6 +47,8 @@ class _SignupFormState extends State<SignupForm> {
                     _passwordController.text,
                   );
                 }
+                SharedPref.setUserEmail(_emailController.text);
+                SharedPref.setUserName(_nameController.text);
               },
               desc: 'Create an Account',
               descStyle: AppTextStyles.whiteColor20FontSizeRegular,

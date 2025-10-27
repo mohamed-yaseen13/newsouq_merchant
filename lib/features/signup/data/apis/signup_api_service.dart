@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:newsouq_merchant/core/constants/database_constants.dart';
-import 'package:newsouq_merchant/core/helpers/shared_pref.dart';
 
 class SignupApiService {
   final FirebaseAuth auth;
@@ -19,8 +18,6 @@ class SignupApiService {
         .collection(DatabaseConstants.emailsCollection)
         .doc(email)
         .set({'password': password, 'role': 'seller'});
-
-    SharedPref.setUserEmail(email);
 
     return response;
   }

@@ -1,6 +1,9 @@
+// ignore_for_file: unnecessary_string_interpolations
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:newsouq_merchant/core/controllers/sidebar_controller.dart';
+import 'package:newsouq_merchant/core/helpers/shared_pref.dart';
 import 'package:newsouq_merchant/core/helpers/spacing.dart';
 import 'package:newsouq_merchant/core/styles/app_colors.dart';
 import 'package:newsouq_merchant/core/styles/app_text_styles.dart';
@@ -80,7 +83,7 @@ class _AppHeaderState extends State<AppHeader> {
                         ),
                         child: Center(
                           child: Text(
-                            'M',
+                            '${SharedPref.getUsername().characters.first}',
                             style: AppTextStyles.whiteColor20FontSizeRegular,
                           ),
                         ),
