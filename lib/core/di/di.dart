@@ -39,7 +39,10 @@ Future<void> setupGetIt() async {
 
   // Login
   getIt.registerLazySingleton<LoginApiService>(
-    () => LoginApiService(auth: getIt<FirebaseAuth>()),
+    () => LoginApiService(
+      auth: getIt<FirebaseAuth>(),
+      firestore: getIt<FirebaseFirestore>(),
+    ),
   );
   getIt.registerLazySingleton<LoginRepoImp>(
     () => LoginRepoImp(loginApiService: getIt<LoginApiService>()),

@@ -11,9 +11,10 @@ class SignupRepoImp {
   Future<ApiResult<UserCredential>> signup(
     String email,
     String password,
+    String name,
   ) async {
     try {
-      final response = await signupApiService.signup(email, password);
+      final response = await signupApiService.signup(email, password, name);
 
       return ApiResult.success(response);
     } catch (error) {

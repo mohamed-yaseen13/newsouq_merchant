@@ -9,12 +9,13 @@ class SignupCubit extends Cubit<SignupState> {
 
   SignupCubit({required this.signupRepoImp}) : super(SignupInitial());
 
-  void signup(String email, String password) async {
+  void signup(String email, String password, String name) async {
     emit(SignupLoading());
 
     ApiResult<UserCredential> response = await signupRepoImp.signup(
       email,
       password,
+      name,
     );
 
     if (response is Success<UserCredential>) {
